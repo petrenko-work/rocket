@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/blogs', function () {
-    return view('blogs');
-});
+Route::get('blog', 'BlogController@index');
+
+Route::get('blog/{id}', 'BlogController@show');
 
 Route::get('/about', function () {
     return view('about');
@@ -26,3 +26,5 @@ Route::get('/about', function () {
 Route::get('/contacts', function () {
     return view('contacts');
 });
+
+Route::post('inquiry', 'InquiryController@store');

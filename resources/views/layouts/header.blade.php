@@ -19,7 +19,7 @@
             </button>
             <ul class="mainNavList">
                 <li><a href="/">главная</a></li>
-                <li><a href="/blogs">блог</a></li>
+                <li><a href="/blog">блог</a></li>
                 <li><a href="/about">о нас</a></li>
                 <li><a href="/">реклама</a></li>
                 <li><a href="/contacts">контакты</a></li>

@@ -146,7 +146,7 @@
                         </ul>
                         <img src="images/decoration.png" alt="decoration">
                         <div class="countMatchWrapper">
-                            <div class="count">500</div>
+                            <div class="count">{{ $settings->price[0] }}</div>
                             <div class="match">гривен<br> в месяц</div>
                         </div>
                     </div>
@@ -170,7 +170,7 @@
                         </ul>
                         <img src="images/decoration.png" alt="decoration">
                         <div class="countMatchWrapper">
-                            <div class="count">1500</div>
+                            <div class="count">{{ $settings->price[1] }}</div>
                             <div class="match">гривен<br> в месяц</div>
                         </div>
                     </div>
@@ -196,7 +196,7 @@
                         </ul>
                         <img src="images/decoration.png" alt="decoration">
                         <div class="countMatchWrapper">
-                            <div class="count">от 5000</div>
+                            <div class="count">от {{ $settings->price[2] }}</div>
                             <div class="match">гривен<br> в месяц</div>
                         </div>
                     </div>
@@ -215,10 +215,24 @@
                 <div class="consultingFlexItem2">
                     <h2>Консультация</h2>
                     <h3>Получите консультацию по рекламе а так же её просчет</h3>
-                    <form>
+
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{session('error')}}
+                        </div>
+                    @endif
+
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            form submitted successfully
+                        </div>
+                    @endif
+
+                    <form method="post" action="/inquiry">
+                        @csrf
                         <input type="hidden" class="hidden-title">
                         <input type="text" placeholder="Ваше имя" name="name">
-                        <input type="text" placeholder="Ваш телефон" name="telephone">
+                        <input type="text" placeholder="Ваш телефон" name="phone">
                         <input type="submit" value="отправить">
                     </form>
                 </div>
