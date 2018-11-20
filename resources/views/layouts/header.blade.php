@@ -5,8 +5,8 @@
             <h1 class="logo"><a href="/">Rocket Promo</a></h1>
         @else
             <div class="logoMin">
-                <a href="index.html">
-                    <img src="images/logoMin.png" alt="Rocket Promo">
+                <a href="/">
+                    <img src="/images/logoMin.png" alt="Rocket Promo">
                 </a>
             </div>
         @endif

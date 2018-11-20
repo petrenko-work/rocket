@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
             $blog->image = 'images/newsImg.jpg';
             $blog->date = '11 июля 2017';
             $blog->title = $faker->jobTitle;
-            $blog->body = $faker->text();
+            $blog->body = $faker->realText(1000);
             $blog->save();
         }
     }

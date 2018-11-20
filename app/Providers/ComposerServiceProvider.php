@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Settings;
+use Illuminate\Foundation\Console\Presets\None;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,7 +16,11 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $settings = Settings::first();
+        try {
+            $settings = Settings::first();
+        } catch (\Exception $e) {
+            $settings = null;
+        }
 
         View::composer(['index', 'layouts.footer'], function ($view) use ($settings) {
             $view->with('settings', $settings);
