@@ -28,3 +28,8 @@ Route::get('/contacts', function () {
 });
 
 Route::post('inquiry', 'InquiryController@store');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
